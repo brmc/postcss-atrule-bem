@@ -63,7 +63,7 @@ _None as of 2017-11-21._
 ### Changed
 - Update dependencies
 - Fix long standing CommonJS require
-  - To upgrade change `const atRuleBem = require('postcss-atrule-bem').default;` to `const atRuleBem = require('postcss-atrule-bem');`
+  - To upgrade change `const atRuleBem = require('postcss-atrule-bem-prefixer').default;` to `const atRuleBem = require('postcss-atrule-bem-prefixer');`
 
 
 ## [2.1.3] - 2017-03-23

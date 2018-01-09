@@ -3,7 +3,7 @@ import postcss, {root as Root, rule as Rule} from 'postcss';
 import {childValidated, cleanChildren, generateSelector, prependAonB} from './lib/utils';
 
 export default postcss.plugin(
-  'postcss-atrule-bem',
+  'postcss-atrule-bem-prefixer',
   opts => {
     const OPTIONS = Object.assign(
       {},

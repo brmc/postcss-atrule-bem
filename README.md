@@ -1,6 +1,6 @@
 atrule-bem
 ---
-[![Travis](https://img.shields.io/travis/tbremer/postcss-atrule-bem.svg?style=flat-square)](https://travis-ci.org/tbremer/postcss-atrule-bem)
+[![Travis](https://img.shields.io/travis/tbremer/postcss-atrule-bem-prefixer.svg?style=flat-square)](https://travis-ci.org/tbremer/postcss-atrule-bem)
 [![npm](https://img.shields.io/npm/v/postcss-atrule-bem.svg?style=flat-square)](https://www.npmjs.com/package/postcss-atrule-bem)
 [![npm](https://img.shields.io/npm/l/postcss-atrule-bem.svg?style=flat-square)](https://github.com/tbremer/postcss-atrule-bem/blob/master/LICENSE)
 
@@ -84,13 +84,13 @@ Default: `{
 Add *atrule-bem* to your build tool:
 
 ```bash
-npm install --save-dev postcss-atrule-bem
+npm install --save-dev postcss-atrule-bem-prefixer
 ```
 
 #### Node
 
 ```js
-import atRuleBem from 'postcss-atrule-bem';
+import atRuleBem from 'postcss-atrule-bem-prefixer';
 
 atRuleBem.process(/* your css */);
 ```
@@ -106,7 +106,7 @@ npm install postcss --save-dev
 Load *atrule-bem* as a PostCSS plugin:
 
 ```js
-import atRuleBem from 'postcss-atrule-bem';
+import atRuleBem from 'postcss-atrule-bem-prefixer';
 
 postcss([ atRuleBem() ])
 .process(/* your css */, /* options */);
@@ -138,4 +138,4 @@ Open for pull requests in the following areas:
 ## Updating 3.0 for CommonJS users.
 I added a babel plugin to correctly adapt the default export to the expected CommonJS type.
 
-To upgrade change `const atRuleBem = require('postcss-atrule-bem').default;` to `const atRuleBem = require('postcss-atrule-bem');`
+To upgrade change `const atRuleBem = require('postcss-atrule-bem-prefixer').default;` to `const atRuleBem = require('postcss-atrule-bem-prefixer');`

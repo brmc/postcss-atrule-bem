@@ -1,5 +1,5 @@
 {
-  "name": "postcss-atrule-bem",
+  "name": "postcss-atrule-bem-prefixer",
   "description": "Transpile BEM Components to valid CSS",
   "version": "3.1.2",
   "main": "dist/index.js",
