@@ -1,6 +1,6 @@
 /* eslint-disable */
-import postcss, { root as Root, rule as Rule } from 'postcss';
-import { cleanChildren, generateSelector, prependAonB, childValidated } from './lib/utils';
+import postcss, {root as Root, rule as Rule} from 'postcss';
+import {childValidated, cleanChildren, generateSelector, prependAonB} from './lib/utils';
 
 export default postcss.plugin(
   'postcss-atrule-bem',
@@ -15,6 +15,10 @@ export default postcss.plugin(
           element: '__',
           modifier: '--'
         },
+        prepend: {
+          block: false,
+          element: false,
+        }
       },
       opts
     );
@@ -30,10 +34,10 @@ export default postcss.plugin(
     const BLOCK = OPTIONS.shortcuts ? 'b' : 'block';
     const ELEMENT = OPTIONS.shortcuts ? 'e' : 'element';
     const MODIFIER = OPTIONS.shortcuts ? 'm' : 'modifier';
-    const VALID_RULES = [ BLOCK, ELEMENT, MODIFIER ];
+    const VALID_RULES = [BLOCK, ELEMENT, MODIFIER];
     const VALID_CHILDREN = {
-      [BLOCK]: [ ELEMENT, MODIFIER ],
-      [ELEMENT]: [ MODIFIER ],
+      [BLOCK]: [ELEMENT, MODIFIER],
+      [ELEMENT]: [MODIFIER],
       [MODIFIER]: []
     };
 
@@ -42,7 +46,7 @@ export default postcss.plugin(
         if (node.parent !== parent) return;
         if (VALID_RULES.indexOf(node.name) === -1) return;
         if (options.strict && !childValidated(node, node.parent, VALID_CHILDREN)) {
-          node.__atrulebem__ = { valid: false };
+          node.__atrulebem__ = {valid: false};
           if (options.warn) {
             container.warn(result, `Type ${String(node.name)} cannot have child of ${String(node.parent.name)}`);
           }
@@ -50,11 +54,14 @@ export default postcss.plugin(
           return;
         }
 
+        const glue = nodes.name === BLOCK ? ' ' : '';
+
         const SELECTOR = prependAonB(previousSelector, generateSelector(node, ELEMENT, MODIFIER, OPTIONS));
+        let newSelector = SELECTOR.join(',');
 
         container.append(
           new Rule({
-            selector: SELECTOR.join(','),
+            selector: `${previousSelector}${glue}${newSelector}`,
             nodes: node.nodes
           })
         );
