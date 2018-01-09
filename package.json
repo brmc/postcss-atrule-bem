@@ -1,12 +1,12 @@
 {
   "name": "postcss-atrule-bem",
   "description": "Transpile BEM Components to valid CSS",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "main": "dist/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "repository": {
-    "url": "https://github.com/tbremer/postcss-bem-atrule.git",
+    "url": "https://github.com/brmc/postcss-bem-atrule.git",
     "type": "git"
   },
   "author": {
@@ -19,6 +19,10 @@
       "name": "SilencerWeb",
       "email": "Silencer.Web@mail.ru",
       "url": "https://github.com/SilencerWeb"
+    }, {
+      "name": "Brian McClure",
+      "email": "brian@mcclure.pw",
+      "url": "https://github.com/brmc"
     }
   ],
   "license": "MIT",
